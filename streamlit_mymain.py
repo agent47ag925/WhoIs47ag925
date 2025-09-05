@@ -8,7 +8,7 @@ from datetime import datetime
 # 기본 설정
 # -----------------------------
 st.set_page_config(
-    page_title="Portfolio | Your Name",
+    page_title="Portfolio | Jeongeun Park",
     page_icon="📁",
     layout="wide"
 )
@@ -36,23 +36,24 @@ st.markdown("""
 # 데이터 예시 정의
 # -----------------------------
 PROFILE = {
-    "name": "Your Name",
+    "name": "Jeongeun Park",
     "title": "AI Engineer · Educator",
     "summary": "실무 중심의 AI/ML 및 컴퓨터 비전 프로젝트 수행과 교육을 병행함. 연구와 제품화를 잇는 브릿지를 지향함.",
     "location": "Seoul, Korea",
-    "email": "you@example.com",
+    "email": "jeongeunswd@gmail.com",
     "links": {
-        "GitHub": "https://github.com/yourname",
-        "LinkedIn": "https://www.linkedin.com/in/yourname/",
-        "Homepage": "https://yourname.dev",
+        "GitHub": "https://github.com/agent47ag925/",
+        "LinkedIn": "https://www.linkedin.com/in/jeongeun-park-5009581ba/",
+        "Homepage": "https://whois47ag925.streamlit.app/",
     }
 }
 
 SKILLS = {
-    "Languages": ["Python", "JavaScript/TypeScript", "SQL"],
-    "AI/ML": ["PyTorch", "OpenCV", "Hugging Face", "LangChain"],
-    "Web": ["FastAPI", "Streamlit", "React (기초)"],
-    "Cloud/DevOps": ["Docker", "GCP", "GitHub Actions"]
+    "Languages": ["Python", "C#"],
+    "AI/ML": ["PyTorch", "OpenCV", "Hugging Face", "LangChain/LlamaIndex"],
+    "Web": ["FastAPI", "Streamlit"],
+    "Cloud/DevOps": ["Docker", "GCP", "AWS"],
+    "Game Engine" : ["Unity", "ZBrush(Study)"]
 }
 
 PROJECTS = [
@@ -86,6 +87,14 @@ PUBLICATIONS = [
         "link": "https://arxiv.org/abs/xxxx.xxxxx",
         "authors": "Your Name, Coauthor A, Coauthor B",
         "year": 2025
+    },
+    {
+        "title": "A Flow-based Vectorization Approach for Emotion Recognition from Handwriting",
+        "venue": "CSA 2025 (under review)",
+        "link": "https://arxiv.org/abs/xxxx.xxxxx",
+        "authors": "Your Name, Coauthor A, Coauthor B",
+        "year": 2025
+
     }
 ]
 
@@ -98,12 +107,14 @@ TEACHING = [
 # 유틸 함수
 # -----------------------------
 def draw_header():
-    left, right = st.columns([3,1])
+    left, middle, right = st.columns([3,1])
     with left:
         st.title(PROFILE["name"])
         st.write(PROFILE["title"])
         st.write(PROFILE["summary"])
         st.caption(f"{PROFILE['location']} · {PROFILE['email']}")
+    with middle:
+        st.image("profile.jpg", width=180, caption="")  # 👉 실제 사진 파일 이름으로 교체
     with right:
         st.download_button(
             "Resume (PDF) 다운로드",
