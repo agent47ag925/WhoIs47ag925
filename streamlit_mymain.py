@@ -40,7 +40,7 @@ st.markdown("""
 PROFILE = {
     "name": "Jeongeun Park",
     "title": "AI Engineer · Instructor  · AR/VR Programmer",
-    "summary": "실무 중심의 AI/ML 및 컴퓨터 비전 프로젝트 수행과 교육을 병행함. 연구와 제품화를 잇는 브릿지를 지향함.",
+    "summary": "실무 중심의 AI/ML과 컴퓨터 비전 프로젝트로 로보틱스의 인지적 시야를 넓히려는 프로그래머이자 연구자",
     "location": "Seoul, Korea",
     "email": "jeongeunswd@gmail.com",
     "links": {
@@ -122,17 +122,16 @@ def safe_image(path: str, width: int = 180):
     st.image(fixed_bytes, width=width)
 
 def draw_header():
-    left, middle, right = st.columns([3,1,1])
+    left, right = st.columns([3,1])
     with left:
         st.title(PROFILE["name"])
         st.write(PROFILE["title"])
         st.write(PROFILE["summary"])
         st.caption(f"{PROFILE['location']} · {PROFILE['email']}")
-    with middle:
-        safe_image("./profile.jpg", width=180)  # 👉 실제 사진 파일 이름으로 교체
     with right:
+        safe_image("./profile.jpg", width=250)  # 👉 실제 사진 파일 이름으로 교체
         st.download_button(
-            "Resume (PDF) 다운로드",
+            "Download Resume",
             data=b"",  # 실제 PDF 바이트로 교체하려 함
             file_name="resume.pdf",
             mime="application/pdf",
@@ -155,11 +154,11 @@ def show_about():
 - 교육 활동을 병행하며 학습자가 현장에서 바로 활용할 수 있는 역량을 키울 수 있도록 지원함
 - 로보틱스, Human-Computer Interaction 기술을 확장해 사람과 기술을 연결하는 솔루션 개발을 지향함
 
-👉 Experienced in conducting AI/ML and computer vision projects with a strong focus on practical applications
-👉 Strive to bridge the gap between research and productization, ensuring that academic outcomes lead to tangible solutions
-👉 Engage in parallel teaching activities, helping learners build competencies that are directly applicable in real-world settings
-👉 Aim to advance toward robotics, human–robot interaction (HRI), and bio-based emotional, rehabilitative, and therapeutic technologies to create solutions that connect people with technology
-👉 Committed to generating social value and innovation by integrating research, industry practice, and education
+👉 Experienced in conducting AI/ML and computer vision projects with a strong focus on practical applications              
+👉 Strive to bridge the gap between research and productization, ensuring that academic outcomes lead to tangible solutions              
+👉 Engage in parallel teaching activities, helping learners build competencies that are directly applicable in real-world settings              
+👉 Aim to advance toward robotics, human–robot interaction (HRI), and bio-based emotional, rehabilitative, and therapeutic technologies to create solutions that connect people with technology              
+👉 Committed to generating social value and innovation by integrating research, industry practice, and education              
 
 """)
 
