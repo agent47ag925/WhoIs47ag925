@@ -107,7 +107,7 @@ TEACHING = [
 # 유틸 함수
 # -----------------------------
 def draw_header():
-    left, middle, right = st.columns([3,1])
+    left, middle, right = st.columns([3,1,1])
     with left:
         st.title(PROFILE["name"])
         st.write(PROFILE["title"])
