@@ -150,8 +150,17 @@ def draw_header():
 def show_about():
     st.subheader("About")
     st.write("""
-- 연구와 서비스화를 동시에 고려하여 문제를 정의하고 해결책을 설계하려 함  
-- 컴퓨터 비전, RAG/에이전트, 교육 콘텐츠 제작 경험을 융합하여 현실 적용 사례를 만드는 데 강점 보유함
+- 실무 중심의 AI/ML 및 컴퓨터 비전 프로젝트를 수행해 옴
+- 연구 성과를 실제 서비스와 제품화로 연결하는 브릿지를 지향함
+- 교육 활동을 병행하며 학습자가 현장에서 바로 활용할 수 있는 역량을 키울 수 있도록 지원함
+- 로보틱스, Human-Computer Interaction 기술을 확장해 사람과 기술을 연결하는 솔루션 개발을 지향함
+
+👉 Experienced in conducting AI/ML and computer vision projects with a strong focus on practical applications
+👉 Strive to bridge the gap between research and productization, ensuring that academic outcomes lead to tangible solutions
+👉 Engage in parallel teaching activities, helping learners build competencies that are directly applicable in real-world settings
+👉 Aim to advance toward robotics, human–robot interaction (HRI), and bio-based emotional, rehabilitative, and therapeutic technologies to create solutions that connect people with technology
+👉 Committed to generating social value and innovation by integrating research, industry practice, and education
+
 """)
 
 def show_skills():
