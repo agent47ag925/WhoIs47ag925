@@ -106,6 +106,11 @@ TEACHING = [
 # -----------------------------
 # 유틸 함수
 # -----------------------------
+def safe_image(path: str, width: int = 180):
+    with open(path, "rb") as f:
+        data = f.read()
+    st.image(data, width=width)
+
 def draw_header():
     left, middle, right = st.columns([3,1,1])
     with left:
@@ -114,7 +119,7 @@ def draw_header():
         st.write(PROFILE["summary"])
         st.caption(f"{PROFILE['location']} · {PROFILE['email']}")
     with middle:
-        st.image("profile.jpg", width=180, caption="")  # 👉 실제 사진 파일 이름으로 교체
+        safe_image("./profile.jpg", width=180)  # 👉 실제 사진 파일 이름으로 교체
     with right:
         st.download_button(
             "Resume (PDF) 다운로드",
