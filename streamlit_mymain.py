@@ -119,7 +119,7 @@ def draw_header():
         st.write(PROFILE["summary"])
         st.caption(f"{PROFILE['location']} · {PROFILE['email']}")
     with middle:
-        safe_image("/profile.jpg", width=180)  # 👉 실제 사진 파일 이름으로 교체
+        safe_image("./profile.jpg", width=180)  # 👉 실제 사진 파일 이름으로 교체
     with right:
         st.download_button(
             "Resume (PDF) 다운로드",
