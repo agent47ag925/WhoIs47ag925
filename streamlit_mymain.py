@@ -3,6 +3,8 @@
 
 import streamlit as st
 from datetime import datetime
+from PIL import Image, ImageOps
+import io
 
 # -----------------------------
 # 기본 설정
@@ -37,7 +39,7 @@ st.markdown("""
 # -----------------------------
 PROFILE = {
     "name": "Jeongeun Park",
-    "title": "AI Engineer · Educator",
+    "title": "AI Engineer · Instructor  · AR/VR Programmer",
     "summary": "실무 중심의 AI/ML 및 컴퓨터 비전 프로젝트 수행과 교육을 병행함. 연구와 제품화를 잇는 브릿지를 지향함.",
     "location": "Seoul, Korea",
     "email": "jeongeunswd@gmail.com",
@@ -107,9 +109,17 @@ TEACHING = [
 # 유틸 함수
 # -----------------------------
 def safe_image(path: str, width: int = 180):
-    with open(path, "rb") as f:
-        data = f.read()
-    st.image(data, width=width)
+    img = Image.open(path)
+    # EXIF Orientation 태그 반영해서 올바른 방향으로 교정
+    img = ImageOps.exif_transpose(img)
+
+    # 메모리에 다시 저장 (EXIF 제거됨)
+    buf = io.BytesIO()
+    img.save(buf, format="JPEG")
+    fixed_bytes = buf.getvalue()
+
+    # Streamlit에 출력
+    st.image(fixed_bytes, width=width)
 
 def draw_header():
     left, middle, right = st.columns([3,1,1])
